@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Message } from '@tennis/api-interfaces';
+import { TennisFacade } from './services/tennis.facade';
+import { Observable } from 'rxjs';
+import { Opponents } from './model';
 
 @Component({
   selector: 'tennis-root',
@@ -8,6 +9,9 @@ import { Message } from '@tennis/api-interfaces';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  hello$ = this.http.get<Message>('/api/hello');
-  constructor(private http: HttpClient) {}
+  public opponents$: Observable<Opponents> = this.tennisFacade.opponents$;
+
+  constructor(private tennisFacade: TennisFacade) {
+    this.tennisFacade.initScore();
+  }
 }

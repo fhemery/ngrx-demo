@@ -1,0 +1,23 @@
+<div *ngIf="opponents">
+  <div class="player-line">
+    <div class="player">{{opponents.p1}}</div>
+    <div class="set-score">6</div>
+    <div class="set-score">3</div>
+    <div class="current-set-score">0</div>
+    <div class="current-point-score">15</div>
+    <div class="score-button">
+      <button>Score</button>
+    </div>
+  </div>
+
+  <div class="player-line">
+    <div class="player"><span class="has-serve"> o </span> {{opponents.p2}}</div>
+    <div class="set-score">7</div>
+    <div class="set-score">6</div>
+    <div class="current-set-score">1</div>
+    <div class="current-point-score">30</div>
+    <div class="score-button">
+      <button>Score</button>
+    </div>
+  </div>
+</div>
