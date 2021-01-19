@@ -10,7 +10,7 @@ import { TennisFacade } from './services/tennis.facade';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HttpService } from './services/http.service';
 import { EffectsModule } from '@ngrx/effects';
-import { ScoreEffects } from './state/effects';
+import { GameEffects } from './state/effects';
 
 @NgModule({
   declarations: [AppComponent, ScorePanelComponent],
@@ -21,7 +21,7 @@ import { ScoreEffects } from './state/effects';
         strictActionImmutability: true
       }
     }),
-    EffectsModule.forRoot([ScoreEffects]),
+    EffectsModule.forRoot([GameEffects]),
     StoreDevtoolsModule.instrument({
       maxAge: 25 // Retains last 25 states
     })],

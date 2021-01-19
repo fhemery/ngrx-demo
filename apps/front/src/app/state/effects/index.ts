@@ -8,7 +8,7 @@ import { HttpService } from '../../services/http.service';
 import { of } from 'rxjs';
 
 @Injectable()
-export class ScoreEffects {
+export class GameEffects {
   public constructor(
     private actions$: Actions,
     private store: Store<Game>,
@@ -20,9 +20,9 @@ export class ScoreEffects {
     this.actions$.pipe(
       ofType(gameFetch),
       switchMap(() => this.httpService.fetchGame()),
-      switchMap((score: Game) => {
-        if (score) {
-          return of(gameFetchSuccess({game: score}));
+      switchMap((game: Game) => {
+        if (game) {
+          return of(gameFetchSuccess({game: game}));
         }
         return of(gameFetchFailure());
       })

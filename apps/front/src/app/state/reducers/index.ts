@@ -6,8 +6,8 @@ const initialState: Game = null;
 
 const red = createReducer(
   initialState,
-  on(gameFetchSuccess, (state, apiScore: {game: Game}) => {
-    return apiScore.game
+  on(gameFetchSuccess, (state, apiGame: {game: Game}) => {
+    return apiGame.game
   })
 );
 

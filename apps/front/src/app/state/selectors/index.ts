@@ -1,6 +1,6 @@
 import { Game } from '../../model';
 import { createSelector } from '@ngrx/store';
 
-const scoreStorePart: (root: any) => Game = (root: any) => root.game;
+const gameStorePart: (root: any) => Game = (root: any) => root.game;
 
-export const selectOpponents = createSelector(scoreStorePart, score => score?.opponents || {})
+export const selectOpponents = createSelector(gameStorePart, score => score?.opponents || {p1: '', p2: ''})
